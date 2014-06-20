@@ -7,7 +7,7 @@ Inventory your fridge. Connect with friends. Learn to cook. Win hackathons
 Core Functionality (2 People)
 -----------------------------
 
-- Build the system that takes the picture and processes it into the database (will involve compression, and [Histogram method] [1]). 
+- Build the system that takes the picture and processes it into the database (will involve compression, and Histogram method [1]). 
 - Implement search algorithm to find items taken out of the fridge matching old ones (present a few results, highlighting the best one, and allow users to select or scroll through other close ones for the correct image). Can implement something like Levenshtein matching for nerd cred!
 - May also need database of common items to match photos to actual objects, see below
 - Can also just scan a receipt
@@ -22,8 +22,8 @@ Social Connection and Education (1-2 People)
 
 Useful Links
 ------------
-[1]: http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm "Histogram method"
-[2]: http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image "Getting pixels from image in Java"
+1: http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm "Histogram method"
+2: http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image "Getting pixels from image in Java"
 
 Backup Alarm Clock
 ------------------
