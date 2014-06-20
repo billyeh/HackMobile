@@ -24,6 +24,35 @@ Useful Links
 ------------
 1. Histogram method http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm
 2. Getting pixels from image in Java http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image
+3. Getting the camera to take pictures http://developer.android.com/guide/topics/media/camera.html
+
+Using Git
+---------
+Open up your terminal, make sure you have Git installed.
+
+### Getting started
+```bash
+$ cd folder_where_you_want_project/
+$ git clone https://github.com/billyeh/HackMobile.git # this downloads all the files to your computer
+$ cd HackMobile # you are now in the project's directory
+```
+
+### Doing work
+We should **try not to work on the same files at the same time** to avoid merge conflicts, but it's not the end of the world if they come up. First, get the latest files.
+
+```bash
+$ git pull
+```
+
+Next, do some work.
+
+```bash
+$ git commit -am "this is a commit message" # -a tells Git to add the files you modified and added to the commit
+                                            # and -m allows you to put the message inline
+$ git push # this puts the files onto Github so we can pull next time
+```
+
+That should be all we need to do this project! :)
 
 Backup Alarm Clock
 ------------------
