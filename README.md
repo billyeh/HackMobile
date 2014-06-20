@@ -22,8 +22,8 @@ Social Connection and Education (1-2 People)
 
 Useful Links
 ------------
-1: http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm "Histogram method"
-2: http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image "Getting pixels from image in Java"
+1. http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm "Histogram method"
+2. http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image "Getting pixels from image in Java"
 
 Backup Alarm Clock
 ------------------
