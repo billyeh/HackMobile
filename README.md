@@ -17,3 +17,11 @@ Social Connection and Education (1-2 People)
 
 - Share with friends what's in your fridge, update when you have compatible items (you have chips? I have salsa, let's eat!) - would have collection of recipes and search for items that go together.
 - See if ingredients with or without friends match recipes, and teach them to cook the recipe
+
+
+Kitchen Inventory
+-----------------
+
+- Create an inventory of your entire kitchen by either receiving a list of groceries you bought from the store, or by scanning receipts. 
+- Use this inventory to provide nutritonal information about the contents of your kitchen.
+- Find what dishes you can make based on ingredients in your kitchen. Otherwise, search for a dish you want to make, and find what ingredients you are missing so that you can buy them and get cooking.
