@@ -24,6 +24,7 @@ Useful Links
 ------------
 1. Histogram method http://stackoverflow.com/questions/843972/image-comparison-fast-algorithm
 2. Getting pixels from image in Java http://stackoverflow.com/questions/6524196/java-get-pixel-array-from-image
+3. Getting the camera to take pictures http://developer.android.com/guide/topics/media/camera.html
 
 Using Git
 ---------
@@ -50,6 +51,8 @@ $ git commit -am "this is a commit message" # -a tells Git to add the files you 
                                             # and -m allows you to put the message inline
 $ git push # this puts the files onto Github so we can pull next time
 ```
+
+That should be all we need to do this project! :)
 
 Backup Alarm Clock
 ------------------
