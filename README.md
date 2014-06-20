@@ -17,3 +17,8 @@ Social Connection and Education (1-2 People)
 
 - Share with friends what's in your fridge, update when you have compatible items (you have chips? I have salsa, let's eat!) - would have collection of recipes and search for items that go together.
 - See if ingredients with or without friends match recipes, and teach them to cook the recipe
+
+Backup Alarm Clock
+------------------
+
+Trouble waking up? Solution: An alarm clock with a vibrating device under your mattress. Or a nerf gun that shoots you in the face (?) Hardware Component - 3D printed device that can vibrate under your mattress. This device should also be able to communicate with your phone. Software Component - Alarm Clock app that can set off vibrating device.
