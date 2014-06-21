@@ -39,9 +39,9 @@ public class Item {
 				int stockSum = 0;
 				int currentSum = 0;
 				JsonArray rgbArray = hist.get(i).getAsJsonArray();
-				for (int j = 0; j < 6; j++) {
-					stockSum += rgbArray.get(j).getAsInt();
-					currentSum += this.histogram[i][j];
+				for (int j = 0; j < 10; j++) {
+					stockSum += rgbArray.get(j).getAsInt() * (j + 1);
+					currentSum += this.histogram[i][j] * (j + 1);
 				}
 				rgbDiffs[i] = Math.abs(stockSum - currentSum);
 			}

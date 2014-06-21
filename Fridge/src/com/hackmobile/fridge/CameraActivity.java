@@ -11,6 +11,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -80,6 +86,7 @@ public class CameraActivity extends Activity {
 		public void onPictureTaken(byte[] data, Camera camera) {
 
 			new ProcessImage(getApplicationContext()).execute(data);
+			Toast.makeText(getApplicationContext(), "You can make a recipe with Srijan! \n" + "Yogurt and Fruit\n" + "2 cups yogurt, 3 tangerines, 2 apples, 1 granola bar, 1 banana", Toast.LENGTH_LONG).show();
 
 		}
 	};
@@ -161,6 +168,11 @@ class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 		// preview.
 		try {
 			mCamera.setPreviewDisplay(holder);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			mCamera.startPreview();
 		} catch (IOException e) {
 			Log.d("Fridge", "Error setting camera preview: " + e.getMessage());
@@ -200,6 +212,82 @@ class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 	}
 }
 
+class GetRecipe extends AsyncTask<String, Integer, String> {
+
+	@Override
+	protected String doInBackground(String... params) {
+		String result = connect("http://pure-sea-5023.herokuapp.com/userlist/tangerine");
+		return result;
+	}
+
+	public static String connect(String url) {
+
+		HttpClient httpclient = new DefaultHttpClient();
+		String result = "";
+
+		// Prepare a request object
+		HttpGet httpget = new HttpGet(url);
+
+		// Execute the request
+		HttpResponse response;
+		try {
+			response = httpclient.execute(httpget);
+			// Examine the response status
+			Log.i("Praeda", response.getStatusLine().toString());
+
+			// Get hold of the response entity
+			HttpEntity entity = response.getEntity();
+			// If the response does not enclose an entity, there is no need
+			// to worry about connection release
+
+			if (entity != null) {
+
+				// A Simple JSON Response Read
+				InputStream instream = entity.getContent();
+				result = convertStreamToString(instream);
+				// now you have the string representation of the HTML request
+				instream.close();
+				return result;
+			}
+
+		} catch (Exception e) {
+		}
+		return result;
+	}
+
+	private static String convertStreamToString(InputStream is) {
+		/*
+		 * To convert the InputStream to String we use the
+		 * BufferedReader.readLine() method. We iterate until the BufferedReader
+		 * return null which means there's no more data to read. Each line will
+		 * appended to a StringBuilder and returned as String.
+		 */
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		StringBuilder sb = new StringBuilder();
+
+		String line = null;
+		try {
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				is.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return sb.toString();
+	}
+
+	protected void onPostExecute(String result) { 
+		Log.d("Fridge", result);
+	}
+
+}
+
 class ProcessImage extends AsyncTask<byte[], Integer, int[][]> {
 
 	private Context activity;
@@ -227,11 +315,12 @@ class ProcessImage extends AsyncTask<byte[], Integer, int[][]> {
 		// Turn bytes from camera into Bitmap
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 8;
-		Bitmap bmp = BitmapFactory.decodeByteArray(params[0], 0,
+		Bitmap bmpUncropped = BitmapFactory.decodeByteArray(params[0], 0,
 				params[0].length, options);
+		Bitmap bmp = Bitmap.createBitmap(bmpUncropped, 0, 0, 25, 25);
 
 		// Turn Bitmap into bytes
-		int numBuckets = 6;
+		int numBuckets = 10;
 		int picw = bmp.getWidth();
 		int pich = bmp.getHeight();
 		int[] pix = new int[picw * pich];
@@ -262,7 +351,7 @@ class ProcessImage extends AsyncTask<byte[], Integer, int[][]> {
 
 	protected void onPostExecute(int[][] result) {
 		// save int[][]
-		for (int j = 0; j < 6; j++) {
+		for (int j = 0; j < 10; j++) {
 			for (int i = 0; i < 3; i++) {
 				String color;
 				if (i == 0) {
@@ -277,6 +366,7 @@ class ProcessImage extends AsyncTask<byte[], Integer, int[][]> {
 								+ Integer.toString(result[i][j]));
 			}
 		}
+		new GetRecipe().execute("");
 		String filename = activity.getString(R.string.local_items);
 		String json = readFromFile(filename);
 		JsonParser jsonParser = new JsonParser();
