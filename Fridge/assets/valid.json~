@@ -1,0 +1,134 @@
+[
+    {
+        "dateOfCreation": {
+            "timezone": "GMT",
+            "yearDay": 171,
+            "gmtoff": 0,
+            "isDst": 0,
+            "minute": 42,
+            "month": 5,
+            "monthDay": 21,
+            "second": 29,
+            "allDay": false,
+            "weekDay": 6,
+            "year": 2014,
+            "hour": 15
+        },
+        "histogram": [
+            [
+                308,
+                517,
+                1003,
+                1424,
+                842,
+                706
+            ],
+            [
+                449,
+                1108,
+                888,
+                985,
+                676,
+                694
+            ],
+            [
+                623,
+                1690,
+                254,
+                198,
+                161,
+                174
+            ]
+        ],
+        "imageFileName": "/storage/emulated/0/Pictures/MyCameraApp/IMG_20140621_154229.jpg",
+        "name": "banana"
+    },
+    {
+        "dateOfCreation": {
+            "timezone": "GMT",
+            "yearDay": 171,
+            "gmtoff": 0,
+            "isDst": 0,
+            "minute": 45,
+            "month": 5,
+            "monthDay": 21,
+            "second": 18,
+            "allDay": false,
+            "weekDay": 6,
+            "year": 2014,
+            "hour": 15
+        },
+        "histogram": [
+            [
+                595,
+                386,
+                254,
+                1099,
+                2267,
+                499
+            ],
+            [
+                739,
+                681,
+                789,
+                510,
+                1647,
+                434
+            ],
+            [
+                1745,
+                531,
+                286,
+                240,
+                1551,
+                447
+            ]
+        ],
+        "imageFileName": "/storage/emulated/0/Pictures/MyCameraApp/IMG_20140621_154518.jpg",
+        "name": "chips"
+    },
+    {
+        "dateOfCreation": {
+            "timezone": "GMT",
+            "yearDay": 171,
+            "gmtoff": 0,
+            "isDst": 0,
+            "minute": 46,
+            "month": 5,
+            "monthDay": 21,
+            "second": 29,
+            "allDay": false,
+            "weekDay": 6,
+            "year": 2014,
+            "hour": 15
+        },
+        "histogram": [
+            [
+                444,
+                787,
+                965,
+                1450,
+                831,
+                323
+            ],
+            [
+                646,
+                1018,
+                919,
+                987,
+                836,
+                394
+            ],
+            [
+                511,
+                1091,
+                870,
+                994,
+                1031,
+                303
+            ]
+        ],
+        "imageFileName": "/storage/emulated/0/Pictures/MyCameraApp/IMG_20140621_154629.jpg",
+        "name": "gatorade"
+    }
+]

@@ -2,7 +2,10 @@
 <resources>
 
     <string name="app_name">Fridge</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="main_title">Your Items</string>
+    <string name="main_button_add">+</string>
+    <string name="action_settings">Insert Receipt</string>
+    <string name="local_prefs">FridgeSettings</string>
+    <string name="local_items">FridgeItems</string>
 
 </resources>
